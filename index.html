@@ -210,9 +210,19 @@
       left: 0;
       right: 0;
       z-index: 1000;
-      background: rgba(11, 16, 32, 0.88);
-      backdrop-filter: blur(18px);
       border-bottom: 1px solid var(--border);
+    }
+
+    /* Blur lives on a pseudo-element so the fixed mobile menu
+       is positioned against the viewport, not the header bar. */
+    .navbar::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: rgba(11, 16, 32, 0.88);
+      -webkit-backdrop-filter: blur(18px);
+      backdrop-filter: blur(18px);
     }
 
     .nav-container {
@@ -713,7 +723,7 @@
 
     .contact-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 60px;
       align-items: start;
     }
@@ -766,62 +776,6 @@
 
     .contact-item a:hover {
       color: var(--accent);
-    }
-
-    .contact-form {
-      padding: 35px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-    }
-
-    .contact-form h3 {
-      margin-bottom: 25px;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 14px 16px;
-      background: #0b1020;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--text);
-      font: inherit;
-      font-size: 0.9rem;
-      outline: none;
-      transition: border-color 0.2s ease;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: var(--accent);
-    }
-
-    .form-group textarea {
-      min-height: 130px;
-      resize: vertical;
-    }
-
-    .contact-form .btn {
-      width: 100%;
-    }
-
-    .form-message {
-      margin-top: 15px;
-      font-size: 0.85rem;
-      color: var(--accent-light);
     }
 
     /* ==========================
@@ -923,12 +877,19 @@
 
       .menu-toggle {
         display: block;
+        position: relative;
         z-index: 1002;
+        width: 44px;
+        height: 44px;
+        line-height: 1;
       }
 
       .nav-links {
         position: fixed;
         inset: 0;
+        z-index: 1001;
+        height: 100vh;
+        height: 100dvh;
         background: rgba(11, 16, 32, 0.98);
         display: flex;
         flex-direction: column;
@@ -958,7 +919,7 @@
 
       .hero-grid {
         grid-template-columns: 1fr;
-        gap: 55px;
+        gap: 40px;
       }
 
       .hero h1 {
@@ -970,7 +931,9 @@
       }
 
       .hero-image-wrap {
-        max-width: 370px;
+        order: -1;
+        max-width: 320px;
+        margin-top: 30px;
       }
 
       .image-badge {
@@ -991,10 +954,6 @@
 
       .about-card,
       .expertise-card,
-      .contact-form {
-        padding: 25px;
-      }
-
       .section-heading {
         margin-bottom: 35px;
       }
@@ -1696,77 +1655,6 @@
           </div>
 
 
-          <!-- CONTACT FORM -->
-
-          <form class="contact-form reveal" id="contactForm">
-
-            <h3>Send me a message</h3>
-
-            <div class="form-group">
-
-              <label for="name">Your Name</label>
-
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Enter your name"
-                autocomplete="name"
-                required
-              />
-
-            </div>
-
-            <div class="form-group">
-
-              <label for="email">Your Email</label>
-
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Enter your email"
-                autocomplete="email"
-                required
-              />
-
-            </div>
-
-            <div class="form-group">
-
-              <label for="subject">Subject</label>
-
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                placeholder="How can I help you?"
-                required
-              />
-
-            </div>
-
-            <div class="form-group">
-
-              <label for="message">Your Message</label>
-
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Tell me about your project..."
-                required
-              ></textarea>
-
-            </div>
-
-            <button type="submit" class="btn btn-primary">
-              Send Message ↗
-            </button>
-
-            <p class="form-message" id="formMessage"></p>
-
-          </form>
-
         </div>
 
       </div>
@@ -1903,49 +1791,6 @@
         sectionObserver.observe(section);
       });
     }
-
-
-    // Contact form
-    // This opens the visitor's email application.
-    // It does not require a server or paid service.
-    const contactForm = document.getElementById("contactForm");
-    const formMessage = document.getElementById("formMessage");
-
-    contactForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const subject = document.getElementById("subject").value.trim();
-      const message = document.getElementById("message").value.trim();
-
-      // Replace this with your actual email address.
-      const recipient = "krishnadsfdc@gmail.com";
-
-      if (recipient.includes("YOUR_EMAIL")) {
-        formMessage.textContent =
-          "Please update the email address in the website code first.";
-        return;
-      }
-
-      const emailSubject = encodeURIComponent(subject);
-
-      const emailBody = encodeURIComponent(
-        "Name: " + name +
-        "\nEmail: " + email +
-        "\n\nMessage:\n" + message
-      );
-
-      const mailtoLink =
-        "mailto:" + recipient +
-        "?subject=" + emailSubject +
-        "&body=" + emailBody;
-
-      window.location.href = mailtoLink;
-
-      formMessage.textContent =
-        "Your email application should open with your message.";
-    });
   </script>
 
 </body>
