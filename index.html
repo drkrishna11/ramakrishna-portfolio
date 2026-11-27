@@ -1,0 +1,1874 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Ramakrishna Dyavanapelli | SEO & Web Development</title>
+
+  <meta
+    name="description"
+    content="Ramakrishna Dyavanapelli - SEO, AEO, GEO, WordPress, Drupal and web development professional with 10+ years of experience."
+  />
+
+  <meta name="theme-color" content="#0b1020" />
+
+  <!-- Open Graph metadata for social sharing -->
+  <meta property="og:title" content="Ramakrishna Dyavanapelli | Portfolio" />
+  <meta
+    property="og:description"
+    content="SEO, AI search optimization, web development and digital transformation."
+  />
+  <meta property="og:type" content="website" />
+
+  <!-- Website font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* ==========================
+       1. GLOBAL STYLES
+    ========================== */
+
+    :root {
+      --bg: #0b1020;
+      --surface: #11182a;
+      --surface-light: #172137;
+      --text: #f4f7ff;
+      --muted: #a3aec4;
+      --accent: #72a7ff;
+      --accent-light: #a4c6ff;
+      --border: rgba(255, 255, 255, 0.09);
+      --container: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: "Manrope", sans-serif;
+      line-height: 1.2;
+      letter-spacing: -0.035em;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    section {
+      padding: 110px 0;
+    }
+
+    .container {
+      width: min(var(--container), 90%);
+      margin-inline: auto;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 20px;
+    }
+
+    .section-label::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .section-heading {
+      max-width: 750px;
+      margin-bottom: 50px;
+    }
+
+    .section-heading p {
+      max-width: 650px;
+      margin-top: 20px;
+      font-size: 1.05rem;
+    }
+
+    .gradient-text {
+      background: linear-gradient(
+        110deg,
+        #ffffff 10%,
+        #a4c6ff 55%,
+        #72a7ff 100%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      transition: 0.25s ease;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #07101f;
+    }
+
+    .btn-primary:hover {
+      background: #a4c6ff;
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border-color: var(--border);
+      color: var(--text);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    /* ==========================
+       2. NAVIGATION
+    ========================== */
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(11, 16, 32, 0.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-container {
+      width: min(var(--container), 90%);
+      margin-inline: auto;
+      min-height: 82px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .logo {
+      font-family: "Manrope", sans-serif;
+      font-size: 1.45rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--muted);
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent);
+    }
+
+    .nav-links .nav-contact {
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 10px 18px;
+      border-radius: 8px;
+    }
+
+    .nav-links .nav-contact:hover {
+      border-color: var(--accent);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 0;
+      color: var(--text);
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    /* ==========================
+       3. HERO / HOME
+    ========================== */
+
+    .hero {
+      min-height: 100vh;
+      padding-top: 150px;
+      padding-bottom: 90px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: rgba(70, 130, 255, 0.08);
+      filter: blur(120px);
+      border-radius: 50%;
+      top: 10%;
+      right: -200px;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 80px;
+      position: relative;
+    }
+
+    .hero-intro {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent-light);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .status-dot {
+      width: 9px;
+      height: 9px;
+      background: #5ddba0;
+      border-radius: 50%;
+      box-shadow: 0 0 12px rgba(93, 219, 160, 0.5);
+    }
+
+    .hero h1 {
+      margin-bottom: 25px;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      max-width: 620px;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+
+    .hero-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-pill {
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.025);
+      padding: 7px 13px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      max-width: 440px;
+      margin-inline: auto;
+      width: 100%;
+    }
+
+    .hero-image-frame {
+      position: relative;
+      padding: 10px;
+      border: 1px solid rgba(114, 167, 255, 0.35);
+      border-radius: 24px;
+      background: linear-gradient(
+        145deg,
+        rgba(114, 167, 255, 0.12),
+        rgba(255, 255, 255, 0.02)
+      );
+      box-shadow: 0 30px 100px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-image {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center 25%;
+      border-radius: 17px;
+    }
+
+    .image-badge {
+      position: absolute;
+      bottom: 35px;
+      left: -35px;
+      padding: 17px 22px;
+      background: var(--surface-light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .image-badge strong {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: 1.4rem;
+    }
+
+    .image-badge span {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* ==========================
+       4. ABOUT
+    ========================== */
+
+    .about {
+      background: #0e1526;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-card {
+      padding: 35px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+
+    .about-card h3 {
+      margin-bottom: 20px;
+    }
+
+    .about-card p + p {
+      margin-top: 18px;
+    }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 25px;
+    }
+
+    .highlight {
+      padding: 18px;
+      background: rgba(114, 167, 255, 0.06);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    .highlight strong {
+      display: block;
+      font-size: 1.35rem;
+      font-family: "Manrope", sans-serif;
+      color: var(--accent);
+    }
+
+    .highlight span {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .about-content p {
+      margin-bottom: 20px;
+    }
+
+    .about-quote {
+      margin-top: 30px;
+      padding-left: 20px;
+      border-left: 3px solid var(--accent);
+      font-size: 1.1rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* ==========================
+       5. EXPERTISE
+    ========================== */
+
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .expertise-card {
+      padding: 32px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      border-radius: 16px;
+      transition: 0.3s ease;
+    }
+
+    .expertise-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(114, 167, 255, 0.5);
+      background: #131e34;
+    }
+
+    .expertise-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: rgba(114, 167, 255, 0.1);
+      color: var(--accent);
+      font-size: 1.35rem;
+      margin-bottom: 22px;
+    }
+
+    .expertise-card h3 {
+      margin-bottom: 12px;
+    }
+
+    .expertise-card p {
+      font-size: 0.95rem;
+      margin-bottom: 22px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      list-style: none;
+    }
+
+    .tag-list li {
+      font-size: 0.75rem;
+      color: var(--accent-light);
+      background: rgba(114, 167, 255, 0.08);
+      border: 1px solid rgba(114, 167, 255, 0.12);
+      border-radius: 5px;
+      padding: 5px 10px;
+    }
+
+    /* ==========================
+       6. PROJECTS
+    ========================== */
+
+    .projects {
+      background: #0e1526;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .project-card {
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      transition: 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(114, 167, 255, 0.4);
+    }
+
+    .project-visual {
+      height: 190px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          circle at 70% 20%,
+          rgba(114, 167, 255, 0.2),
+          transparent 50%
+        ),
+        #151f35;
+    }
+
+    .project-visual::before,
+    .project-visual::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(114, 167, 255, 0.2);
+      border-radius: 50%;
+      width: 260px;
+      height: 260px;
+    }
+
+    .project-visual::after {
+      width: 180px;
+      height: 180px;
+    }
+
+    .project-letter {
+      position: relative;
+      z-index: 1;
+      font-family: "Manrope", sans-serif;
+      font-size: 4rem;
+      font-weight: 800;
+      color: var(--accent-light);
+    }
+
+    .project-content {
+      padding: 28px;
+    }
+
+    .project-category {
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 12px;
+    }
+
+    .project-content h3 {
+      margin-bottom: 14px;
+    }
+
+    .project-content p {
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .project-content .tag-list {
+      margin-bottom: 20px;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent-light);
+    }
+
+    .project-link:hover {
+      color: #ffffff;
+    }
+
+    .project-note {
+      margin-top: 28px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* ==========================
+       7. CONTACT
+    ========================== */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contact-copy h2 {
+      margin-bottom: 25px;
+    }
+
+    .contact-copy > p {
+      max-width: 500px;
+      margin-bottom: 35px;
+    }
+
+    .contact-details {
+      display: grid;
+      gap: 18px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .contact-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      flex-shrink: 0;
+      background: rgba(114, 167, 255, 0.1);
+      border-radius: 10px;
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+
+    .contact-item small {
+      display: block;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    .contact-item a,
+    .contact-item span {
+      font-size: 0.95rem;
+      font-weight: 600;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-item a:hover {
+      color: var(--accent);
+    }
+
+    .contact-form {
+      padding: 35px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+
+    .contact-form h3 {
+      margin-bottom: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      background: #0b1020;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font: inherit;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .form-group textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .contact-form .btn {
+      width: 100%;
+    }
+
+    .form-message {
+      margin-top: 15px;
+      font-size: 0.85rem;
+      color: var(--accent-light);
+    }
+
+    /* ==========================
+       8. FOOTER
+    ========================== */
+
+    .footer {
+      padding: 30px 0;
+      border-top: 1px solid var(--border);
+      background: #080d19;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer p {
+      font-size: 0.8rem;
+    }
+
+    .back-to-top {
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* ==========================
+       9. SCROLL ANIMATIONS
+    ========================== */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* ==========================
+       10. TABLET RESPONSIVE
+    ========================== */
+
+    @media (max-width: 900px) {
+      section {
+        padding: 85px 0;
+      }
+
+      .hero-grid {
+        gap: 45px;
+      }
+
+      .about-grid {
+        gap: 40px;
+      }
+
+      .contact-grid {
+        gap: 35px;
+      }
+
+      .image-badge {
+        left: -15px;
+      }
+    }
+
+    /* ==========================
+       11. MOBILE RESPONSIVE
+    ========================== */
+
+    @media (max-width: 700px) {
+      .nav-container {
+        min-height: 72px;
+      }
+
+      .menu-toggle {
+        display: block;
+        z-index: 1002;
+      }
+
+      .nav-links {
+        position: fixed;
+        inset: 0;
+        background: rgba(11, 16, 32, 0.98);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 28px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: 0.25s ease;
+      }
+
+      .nav-links.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .nav-links a {
+        font-size: 1.2rem;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 125px;
+        padding-bottom: 70px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 55px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.7rem, 11vw, 4rem);
+      }
+
+      .hero-description {
+        font-size: 1rem;
+      }
+
+      .hero-image-wrap {
+        max-width: 370px;
+      }
+
+      .image-badge {
+        left: -5px;
+        bottom: 25px;
+      }
+
+      .about-grid,
+      .expertise-grid,
+      .projects-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid {
+        gap: 30px;
+      }
+
+      .about-card,
+      .expertise-card,
+      .contact-form {
+        padding: 25px;
+      }
+
+      .section-heading {
+        margin-bottom: 35px;
+      }
+
+      .project-visual {
+        height: 160px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+      }
+
+      .about-highlights {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==========================
+       NAVIGATION
+  ========================== -->
+
+  <header class="navbar">
+    <div class="nav-container">
+
+      <a href="#home" class="logo" aria-label="Ramakrishna home">
+        RK<span>.</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        ☰
+      </button>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li>
+            <a href="#contact" class="nav-contact">Contact Me ↗</a>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ==========================
+         HOME / HERO
+    ========================== -->
+
+    <section class="hero" id="home">
+      <div class="container">
+
+        <div class="hero-grid">
+
+          <div class="hero-content">
+
+            <div class="hero-intro">
+              <span class="status-dot"></span>
+              Digital Transformation & Web Development
+            </div>
+
+            <h1>
+              Hi, I'm<br />
+              <span class="gradient-text">
+                Ramakrishna.
+              </span>
+            </h1>
+
+            <p class="hero-description">
+              I help businesses improve search visibility, build
+              scalable websites, and grow their digital presence
+              through SEO, AI-powered search strategies, and
+              modern web development.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="#projects" class="btn btn-primary">
+                Explore My Projects ↗
+              </a>
+
+              <a href="#contact" class="btn btn-outline">
+                Let's Connect
+              </a>
+            </div>
+
+            <div class="hero-skills">
+              <span class="skill-pill">SEO / AEO / GEO</span>
+              <span class="skill-pill">WordPress</span>
+              <span class="skill-pill">Drupal</span>
+              <span class="skill-pill">Web Development</span>
+            </div>
+
+          </div>
+
+          <div class="hero-image-wrap">
+
+            <div class="hero-image-frame">
+
+              <!-- Your uploaded photo -->
+              <img
+                src="profile.jpg"
+                alt="Ramakrishna Dyavanapelli"
+                class="hero-image"
+                width="800"
+                height="1000"
+                fetchpriority="high"
+              />
+
+            </div>
+
+            <div class="image-badge">
+              <strong>10+ Years</strong>
+              <span>Digital Experience</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================
+         ABOUT
+    ========================== -->
+
+    <section class="about" id="about">
+      <div class="container">
+
+        <div class="about-grid">
+
+          <div class="about-card reveal">
+
+            <span class="section-label">About Me</span>
+
+            <h3>
+              Experience meets innovation.
+            </h3>
+
+            <p>
+              I'm a digital professional who enjoys solving
+              business challenges through technology, search
+              optimization, and thoughtful website experiences.
+            </p>
+
+            <p>
+              I combine technical knowledge with strategic
+              thinking to deliver solutions that support
+              long-term business growth.
+            </p>
+
+            <div class="about-highlights">
+
+              <div class="highlight">
+                <strong>10+</strong>
+                <span>Years of Experience</span>
+              </div>
+
+              <div class="highlight">
+                <strong>3+</strong>
+                <span>Core Specializations</span>
+              </div>
+
+              <div class="highlight">
+                <strong>US / UK / CA</strong>
+                <span>Client Markets</span>
+              </div>
+
+              <div class="highlight">
+                <strong>End-to-End</strong>
+                <span>Project Delivery</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="about-content reveal">
+
+            <span class="section-label">My Background</span>
+
+            <h2>
+              Turning digital challenges into
+              <span class="gradient-text">opportunities.</span>
+            </h2>
+
+            <p>
+              With over 10 years of experience in digital
+              transformation, SEO, and web development, I
+              specialize in helping businesses create stronger
+              and more effective digital experiences.
+            </p>
+
+            <p>
+              My experience includes working with WordPress,
+              Drupal, technical SEO, website optimization,
+              analytics, and AI-driven search strategies.
+            </p>
+
+            <p>
+              I have worked with clients across the United
+              States, United Kingdom, and Canada, supporting
+              projects from strategy and planning through
+              development, implementation, and optimization.
+            </p>
+
+            <p>
+              I am particularly interested in the evolving
+              search landscape, including Answer Engine
+              Optimization (AEO), Generative Engine
+              Optimization (GEO), and AI-powered automation.
+            </p>
+
+            <div class="about-quote">
+              My focus is simple: build better digital
+              experiences, improve visibility, and deliver
+              meaningful business outcomes.
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================
+         EXPERTISE
+    ========================== -->
+
+    <section id="expertise">
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <span class="section-label">My Expertise</span>
+
+          <h2>
+            Skills that power
+            <span class="gradient-text">digital growth.</span>
+          </h2>
+
+          <p>
+            A combination of technical expertise, strategic
+            thinking, and practical implementation across
+            search, web development, and analytics.
+          </p>
+
+        </div>
+
+        <div class="expertise-grid">
+
+          <!-- SEO -->
+
+          <article class="expertise-card reveal">
+
+            <div class="expertise-icon">⌕</div>
+
+            <h3>SEO & Technical SEO</h3>
+
+            <p>
+              Improve website discoverability, technical
+              health, search performance, and organic visibility
+              through data-driven optimization.
+            </p>
+
+            <ul class="tag-list">
+              <li>Technical SEO</li>
+              <li>Keyword Research</li>
+              <li>On-Page SEO</li>
+              <li>Schema Markup</li>
+              <li>Core Web Vitals</li>
+              <li>Google Search Console</li>
+            </ul>
+
+          </article>
+
+
+          <!-- AEO GEO -->
+
+          <article class="expertise-card reveal">
+
+            <div class="expertise-icon">✦</div>
+
+            <h3>AEO, GEO & AI Search</h3>
+
+            <p>
+              Help brands prepare for AI-powered discovery
+              through content optimization, entity
+              understanding, and answer-focused strategies.
+            </p>
+
+            <ul class="tag-list">
+              <li>Answer Engine Optimization</li>
+              <li>Generative Engine Optimization</li>
+              <li>AI Search Visibility</li>
+              <li>Content Optimization</li>
+              <li>SEO Automation</li>
+            </ul>
+
+          </article>
+
+
+          <!-- DEVELOPMENT -->
+
+          <article class="expertise-card reveal">
+
+            <div class="expertise-icon">&lt;/&gt;</div>
+
+            <h3>Web Development & CMS</h3>
+
+            <p>
+              Build, customize, and maintain scalable websites
+              and CMS solutions with a focus on usability,
+              performance, and maintainability.
+            </p>
+
+            <ul class="tag-list">
+              <li>WordPress</li>
+              <li>Drupal</li>
+              <li>PHP</li>
+              <li>JavaScript</li>
+              <li>HTML / CSS</li>
+              <li>REST APIs</li>
+              <li>Headless CMS</li>
+            </ul>
+
+          </article>
+
+
+          <!-- ANALYTICS -->
+
+          <article class="expertise-card reveal">
+
+            <div class="expertise-icon">↗</div>
+
+            <h3>Analytics & Optimization</h3>
+
+            <p>
+              Use analytics, performance monitoring, and
+              automation to identify opportunities and
+              support informed digital decisions.
+            </p>
+
+            <ul class="tag-list">
+              <li>Google Analytics 4</li>
+              <li>Google Tag Manager</li>
+              <li>SEO Audits</li>
+              <li>Website Performance</li>
+              <li>AI Tools</li>
+              <li>Reporting</li>
+            </ul>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================
+         PROJECTS
+    ========================== -->
+
+    <section class="projects" id="projects">
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <span class="section-label">Selected Projects</span>
+
+          <h2>
+            Work that reflects my
+            <span class="gradient-text">expertise.</span>
+          </h2>
+
+          <p>
+            A selection of projects across e-commerce,
+            healthcare, enterprise websites, and digital
+            transformation.
+          </p>
+
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- PROJECT 1 -->
+
+          <article class="project-card reveal">
+
+            <div class="project-visual">
+              <span class="project-letter">A</span>
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-category">
+                E-commerce / SEO
+              </div>
+
+              <h3>Anouskin</h3>
+
+              <p>
+                Supported Shopify SEO and optimization
+                initiatives involving indexing analysis,
+                metadata, structured data, and analytics
+                tracking.
+              </p>
+
+              <ul class="tag-list">
+                <li>Shopify</li>
+                <li>Technical SEO</li>
+                <li>GA4</li>
+                <li>GTM</li>
+              </ul>
+
+              <a
+                href="https://anouskin.com/"
+                class="project-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit Website ↗
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 2 -->
+
+          <article class="project-card reveal">
+
+            <div class="project-visual">
+              <span class="project-letter">TX</span>
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-category">
+                Healthcare / SEO
+              </div>
+
+              <h3>TX Hospitals</h3>
+
+              <p>
+                Conducted website and SEO analysis to identify
+                opportunities for improving technical
+                performance, content visibility, and
+                user experience.
+              </p>
+
+              <ul class="tag-list">
+                <li>SEO Audit</li>
+                <li>Technical SEO</li>
+                <li>Website Optimization</li>
+              </ul>
+
+              <a
+                href="https://txhospitals.in/"
+                class="project-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit Website ↗
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 3 -->
+
+          <article class="project-card reveal">
+
+            <div class="project-visual">
+              <span class="project-letter">Y</span>
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-category">
+                Enterprise / Website Optimization
+              </div>
+
+              <h3>Yaskawa</h3>
+
+              <p>
+                Supported website optimization initiatives
+                involving analytics implementation,
+                tag management, and digital performance
+                improvements.
+              </p>
+
+              <ul class="tag-list">
+                <li>Analytics</li>
+                <li>Tag Management</li>
+                <li>SEO</li>
+              </ul>
+
+              <a
+                href="https://www.yaskawa.com/"
+                class="project-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit Website ↗
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 4 -->
+
+          <article class="project-card reveal">
+
+            <div class="project-visual">
+              <span class="project-letter">CMS</span>
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-category">
+                Enterprise / Headless CMS
+              </div>
+
+              <h3>Access Storage, Sentinel & Depotium</h3>
+
+              <p>
+                Contributed to enterprise website and portal
+                initiatives involving headless CMS architecture,
+                REST APIs, caching, and AWS S3 integration.
+              </p>
+
+              <ul class="tag-list">
+                <li>Drupal</li>
+                <li>REST APIs</li>
+                <li>Headless CMS</li>
+                <li>AWS</li>
+              </ul>
+
+              <a
+                href="#contact"
+                class="project-link"
+              >
+                Discuss This Project ↗
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+        <p class="project-note">
+          Project descriptions reflect selected areas of
+          contribution. Add verified results, screenshots,
+          and your exact role before publishing.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact">
+      <div class="container">
+
+        <div class="contact-grid">
+
+          <div class="contact-copy reveal">
+
+            <span class="section-label">Get In Touch</span>
+
+            <h2>
+              Let's build something
+              <span class="gradient-text">impactful.</span>
+            </h2>
+
+            <p>
+              Looking for an SEO specialist, web development
+              professional, or digital transformation partner?
+              Let's discuss how I can contribute to your
+              next project.
+            </p>
+
+            <div class="contact-details">
+
+              <div class="contact-item">
+
+                <div class="contact-icon">✉</div>
+
+                <div>
+                  <small>Email</small>
+
+                  <!-- Replace with your actual email -->
+                  <a href="mailto:YOUR_EMAIL@example.com">
+                    YOUR_EMAIL@example.com
+                  </a>
+                </div>
+
+              </div>
+
+              <div class="contact-item">
+
+                <div class="contact-icon">in</div>
+
+                <div>
+                  <small>LinkedIn</small>
+
+                  <!-- Replace with your LinkedIn URL -->
+                  <a
+                    href="https://www.linkedin.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Connect on LinkedIn
+                  </a>
+                </div>
+
+              </div>
+
+              <div class="contact-item">
+
+                <div class="contact-icon">⌖</div>
+
+                <div>
+                  <small>Location</small>
+                  <span>Hyderabad, India</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- CONTACT FORM -->
+
+          <form class="contact-form reveal" id="contactForm">
+
+            <h3>Send me a message</h3>
+
+            <div class="form-group">
+
+              <label for="name">Your Name</label>
+
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your name"
+                autocomplete="name"
+                required
+              />
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="email">Your Email</label>
+
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                autocomplete="email"
+                required
+              />
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="subject">Subject</label>
+
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="How can I help you?"
+                required
+              />
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="message">Your Message</label>
+
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tell me about your project..."
+                required
+              ></textarea>
+
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              Send Message ↗
+            </button>
+
+            <p class="form-message" id="formMessage"></p>
+
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==========================
+       FOOTER
+  ========================== -->
+
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-content">
+
+        <p>
+          © <span id="year"></span>
+          Ramakrishna Dyavanapelli. All rights reserved.
+        </p>
+
+        <a href="#home" class="back-to-top">
+          Back to Top ↑
+        </a>
+
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ==========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+    // Update the copyright year automatically
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+
+    // Mobile navigation menu
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    const navItems = navLinks.querySelectorAll("a");
+
+    function closeMenu() {
+      navLinks.classList.remove("open");
+      document.body.classList.remove("menu-open");
+
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Open navigation menu");
+      menuToggle.textContent = "☰";
+    }
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+
+      document.body.classList.toggle("menu-open", isOpen);
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+      );
+
+      menuToggle.textContent = isOpen ? "×" : "☰";
+    });
+
+    navItems.forEach((item) => {
+      item.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeMenu();
+      }
+    });
+
+
+    // Reveal elements as they enter the screen
+    const revealElements = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+      revealElements.forEach((element) => {
+        revealObserver.observe(element);
+      });
+
+    } else {
+      revealElements.forEach((element) => {
+        element.classList.add("visible");
+      });
+    }
+
+
+    // Highlight the active navigation section
+    const sections = document.querySelectorAll("main section[id]");
+
+    if ("IntersectionObserver" in window) {
+      const sectionObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              navItems.forEach((link) => {
+                const isActive =
+                  link.getAttribute("href") === "#" + entry.target.id;
+
+                link.classList.toggle("active", isActive);
+              });
+            }
+          });
+        },
+        {
+          rootMargin: "-35% 0px -55% 0px"
+        }
+      );
+
+      sections.forEach((section) => {
+        sectionObserver.observe(section);
+      });
+    }
+
+
+    // Contact form
+    // This opens the visitor's email application.
+    // It does not require a server or paid service.
+    const contactForm = document.getElementById("contactForm");
+    const formMessage = document.getElementById("formMessage");
+
+    contactForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const subject = document.getElementById("subject").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      // Replace this with your actual email address.
+      const recipient = "YOUR_EMAIL@example.com";
+
+      if (recipient.includes("YOUR_EMAIL")) {
+        formMessage.textContent =
+          "Please update the email address in the website code first.";
+        return;
+      }
+
+      const emailSubject = encodeURIComponent(subject);
+
+      const emailBody = encodeURIComponent(
+        "Name: " + name +
+        "\nEmail: " + email +
+        "\n\nMessage:\n" + message
+      );
+
+      const mailtoLink =
+        "mailto:" + recipient +
+        "?subject=" + emailSubject +
+        "&body=" + emailBody;
+
+      window.location.href = mailtoLink;
+
+      formMessage.textContent =
+        "Your email application should open with your message.";
+    });
+  </script>
+
+</body>
+</html>
