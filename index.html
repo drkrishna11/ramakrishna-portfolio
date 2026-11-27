@@ -644,6 +644,50 @@
       margin-bottom: 20px;
     }
 
+    .project-results {
+      margin: 16px 0 20px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: rgba(114, 167, 255, 0.04);
+    }
+
+    .project-results summary {
+      padding: 12px 14px;
+      color: var(--accent-light);
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .project-results summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .project-results summary::after {
+      content: "+";
+      float: right;
+      font-size: 1rem;
+      line-height: 1;
+    }
+
+    .project-results[open] summary::after {
+      content: "−";
+    }
+
+    .project-results ul {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0 14px 14px 32px;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .project-results li::marker {
+      color: var(--accent);
+    }
+
     .project-link {
       display: inline-flex;
       align-items: center;
@@ -1370,7 +1414,7 @@
           <article class="project-card reveal">
 
             <div class="project-visual">
-              <span class="project-letter">CMS</span>
+              <span class="project-letter">Access Storage</span>
             </div>
 
             <div class="project-content">
@@ -1384,6 +1428,17 @@
               <p>
                Experienced in developing data-driven SEO strategies through keyword research, search intent analysis, competitor benchmarking, and content optimization to improve organic visibility, traffic, and conversions. Skilled in AEO/GEO, GA4, GSC, GTM, Core Web Vitals, SEO analytics, and AI-powered automation to drive measurable business growth across traditional and AI-powered search platforms.
               </p>
+
+              <details class="project-results">
+                <summary>Show Results</summary>
+                <ul>
+                  <li>Improved Google PageSpeed Insights performance by up to 90%.</li>
+                  <li>Increased organic website traffic by 50% within one month.</li>
+                  <li>Identified and resolved critical technical SEO and website performance issues.</li>
+                  <li>Improved keyword rankings, organic visibility, and search engine indexing.</li>
+                  <li>Optimized landing pages and conversion funnels to generate more qualified leads and improve ROI.</li>
+                </ul>
+              </details>
 
               <ul class="tag-list">
                 <li>SEO, Search Market Intelligence</li>
@@ -1421,6 +1476,17 @@
                Implemented end-to-end Google Tag Manager and Google Analytics tracking for the Yaskawa website, enabling custom event tracking, data layer integration, accurate conversion measurement, real-time reporting, and consistent cross-device and cross-browser tracking.
               </p>
 
+              <details class="project-results">
+                <summary>Show Results</summary>
+                <ul>
+ <li>Implemented comprehensive event tracking across all critical website interactions.</li>
+ <li>Improved conversion measurement accuracy through custom GTM triggers and variables.</li>
+ <li>Enabled detailed user behaviour tracking using data layer integration.</li>
+ <li>Improved marketing insights through real-time Google Analytics reporting and dashboards.</li>
+ <li>Ensured consistent tracking across multiple browsers, devices, and website interactions.</li>
+</ul>
+              </details>
+
               <ul class="tag-list">
                 <li>Analytics</li>
                 <li>Tag Management</li>
@@ -1444,7 +1510,7 @@
           <article class="project-card reveal">
 
             <div class="project-visual">
-              <span class="project-letter">A</span>
+              <span class="project-letter">KA</span>
             </div>
 
             <div class="project-content">
@@ -1458,6 +1524,19 @@
               <p>
                 Developed and executed data-driven SEO strategies using GA4 and Google Search Console, focusing on keyword research, competitor analysis, search intent, on-page and technical SEO, and AI-powered search optimization to improve organic visibility, traffic, indexing, and user engagement. Collaborated with marketing and PR teams to optimize newsroom content and digital communications.
               </p>
+
+              <details class="project-results">
+                <summary>Show Results</summary>
+                
+<ul>
+  <li>Improved organic search visibility through keyword research and competitor analysis.</li>
+  <li>Identified high-value keyword gaps and content opportunities to drive organic traffic.</li>
+  <li>Optimized website content, metadata, and internal linking to improve search rankings.</li>
+  <li>Enhanced indexing, crawlability, and technical SEO performance using GA4 and Google Search Console.</li>
+  <li>Improved content discoverability across traditional search engines and AI-powered search platforms.</li>
+</ul>
+
+              </details>
 
               <ul class="tag-list">
                 <li>SEO</li>
@@ -1485,7 +1564,7 @@
           <article class="project-card reveal">
 
             <div class="project-visual">
-              <span class="project-letter">TX</span>
+              <span class="project-letter">Midstate</span>
             </div>
 
             <div class="project-content">
@@ -1499,6 +1578,19 @@
               <p>
                 Executed end-to-end SEO strategies covering on-page, off-page, and technical SEO, improving organic visibility, website performance, security, and search rankings through keyword research, schema optimization, content collaboration, and analytics-driven improvements.
               </p>
+
+              <details class="project-results">
+                <summary>Show Results</summary>
+                
+<ul>
+  <li>Implemented comprehensive on-page, off-page, and technical SEO strategies to improve organic search visibility.</li>
+  <li>Improved keyword rankings through keyword research, competitor analysis, and content optimization.</li>
+  <li>Optimized website speed, metadata, schema markup, and sitemap structure.</li>
+  <li>Enhanced website security, performance, and user experience through regular audits and maintenance.</li>
+  <li>Monitored SEO performance using analytics and implemented data-driven improvements to drive organic traffic and engagement.</li>
+</ul>
+
+              </details>
 
               <ul class="tag-list">
                 <li>SEO Strategy</li>
@@ -1520,16 +1612,8 @@
           </article>
 
 
-          <!-- PROJECT 3 -->
-
          
-
-
-          
-
-        </div>
-
-       
+         
 
       </div>
     </section>
